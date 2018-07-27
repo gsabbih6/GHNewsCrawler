@@ -26,7 +26,7 @@ public class MainClass {
 //                .addPipeline(new ElasticSearchPipeline())
                 .addPipeline(new ConsolePipeline())
                 .thread(5)
-                .d
+                
                 .run();
 
     }
