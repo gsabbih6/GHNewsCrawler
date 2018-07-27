@@ -11,10 +11,25 @@ package Model;
  */
 abstract public class NewBaseModel {
 
-    String sourceUrl, captionImageUrl, articleContent, articleAuthor;
+    String dateofPublishing,sourceUrl, captionImageUrl, articleContent, articleAuthor,articleheadline;
+
+    public String getArticleheadline() {
+        return articleheadline;
+    }
+
+    public void setArticleheadline(String articleheadline) {
+        this.articleheadline = articleheadline;
+    }
+
+    public String getDateofPublishing() {
+        return dateofPublishing;
+    }
+
+    public void setDateofPublishing(String dateofPublishing) {
+        this.dateofPublishing = dateofPublishing;
+    }
 
     
-
     public String getSourceUrl() {
         return sourceUrl;
     }
