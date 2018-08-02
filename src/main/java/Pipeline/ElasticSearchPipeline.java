@@ -25,6 +25,7 @@ public class ElasticSearchPipeline implements Pipeline {
         String json = new Gson().toJson(citiNewModel);
         
         // push to elastic search cluster
+        System.out.println("RESULT = "+json);
         
         
         

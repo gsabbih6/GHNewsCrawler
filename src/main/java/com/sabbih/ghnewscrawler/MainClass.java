@@ -20,11 +20,11 @@ public class MainClass {
 
     public static void main(String[] args) {
         BasicConfigurator.configure();
-        System.out.println("tikemfsjs");
+//        System.out.println("tikemfsjs");
         Spider.create(new CitiNewsPageProcessor())
                 .addUrl(Constants.CITINEWS_URL)
-//                .addPipeline(new ElasticSearchPipeline())
-                .addPipeline(new ConsolePipeline())
+                .addPipeline(new ElasticSearchPipeline())
+//                .addPipeline(new ConsolePipeline())
                 .thread(5)
                 
                 .run();

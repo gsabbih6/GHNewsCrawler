@@ -11,7 +11,7 @@ package Model;
  */
 abstract public class NewBaseModel {
 
-    String dateofPublishing,sourceUrl, captionImageUrl, articleContent, articleAuthor,articleheadline;
+    String dateofPublishing, sourceUrl, captionImageUrl, articleContent, articleAuthor,articleheadline;
 
     public String getArticleheadline() {
         return articleheadline;
