@@ -8,9 +8,13 @@ package com.sabbih.ghnewscrawler;
 import Pipeline.ElasticSearchPipeline;
 import Processor.CitiNewsPageProcessor;
 import Utils.Constants;
+import java.util.concurrent.Executors;
+import java.util.concurrent.ScheduledExecutorService;
+import java.util.concurrent.TimeUnit;
 import org.apache.log4j.BasicConfigurator;
 import us.codecraft.webmagic.Spider;
 import us.codecraft.webmagic.pipeline.ConsolePipeline;
+import us.codecraft.webmagic.scheduler.PriorityScheduler;
 
 /**
  *
@@ -21,13 +25,20 @@ public class MainClass {
     public static void main(String[] args) {
         BasicConfigurator.configure();
 //        System.out.println("tikemfsjs");
-        Spider.create(new CitiNewsPageProcessor())
+
+//Scheduler s=new 
+       Spider s= Spider.create(new CitiNewsPageProcessor())
                 .addUrl(Constants.CITINEWS_URL)
                 .addPipeline(new ElasticSearchPipeline())
 //                .addPipeline(new ConsolePipeline())
                 .thread(5)
-                
-                .run();
+        .setScheduler(new PriorityScheduler());
+       s.runAsync();
+       
+//       Executors.newSingleThreadScheduledExecutor().schedule(s., 10, TimeUnit.SECONDS);
+      
+       
+               
 
     }
 }

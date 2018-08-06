@@ -11,7 +11,15 @@ package Model;
  */
 abstract public class NewBaseModel {
 
-    String dateofPublishing, sourceUrl, captionImageUrl, articleContent, articleAuthor,articleheadline;
+    String dateofPublishing, sourceUrl, captionImageUrl, articleContent, articleAuthor,articleheadline, category, description;
+
+    public String getDescription() {
+        return description;
+    }
+
+    public void setDescription(String description) {
+        this.description = description;
+    }
 
     public String getArticleheadline() {
         return articleheadline;
@@ -60,6 +68,14 @@ abstract public class NewBaseModel {
 
     public void setArticleAuthor(String articleAuthor) {
         this.articleAuthor = articleAuthor;
+    }
+
+    public String getCategory() {
+        return category;
+    }
+
+    public void setCategory(String category) {
+        this.category = category;
     }
 
 }
