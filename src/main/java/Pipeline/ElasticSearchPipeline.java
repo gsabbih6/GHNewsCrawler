@@ -6,6 +6,7 @@
 package Pipeline;
 
 import Model.CitiNewModel;
+import Model.JoyOnlineModel;
 import com.google.gson.Gson;
 import us.codecraft.webmagic.ResultItems;
 import us.codecraft.webmagic.Task;
@@ -20,9 +21,12 @@ public class ElasticSearchPipeline implements Pipeline {
 
     @Override
     public void process(ResultItems resultItems, Task task) {
-        CitiNewModel citiNewModel = (CitiNewModel) resultItems.get(Constants.CITINEWS_REPO_KEY);
+//        CitiNewModel citiNewModel = (CitiNewModel) resultItems.get(Constants.CITINEWS_REPO_KEY);
         // convert model to Json file format.
-        String json = new Gson().toJson(citiNewModel);
+        
+         JoyOnlineModel joyOnlineModel = (JoyOnlineModel) resultItems.get(Constants.JOYONLINE_REPO_KEY);
+//        String json = new Gson().toJson(citiNewModel);
+        String json = new Gson().toJson(joyOnlineModel);
         
         // push to elastic search cluster
         System.out.println("RESULT = "+json);

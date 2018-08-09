@@ -29,13 +29,10 @@ public class CitiNewsPageProcessor implements PageProcessor {
 
         CitiNewModel model = new CitiNewModel();
         page.addTargetRequests(page.getHtml().links().regex("(https://citinewsroom\\.com/\\w+/\\w+/\\w+/\\w+)").all());
-//        if (page.getUrl().get().equals("https://citinewsroom.com")) {
-//            page.setSkip(true);
-//        }
-//        model.setDateofPublishing();
+
         doc = Jsoup.parse(page.getHtml().get());
         Elements article = doc.getElementsByTag("article");
-//         model.setDescription(article.get(0).getElementsByTag("p").first().text());
+
         Elements imgs = doc.getElementsByTag("figure");
         StringBuilder s = new StringBuilder();
 //        System.out.print("RESULT="+art.html());

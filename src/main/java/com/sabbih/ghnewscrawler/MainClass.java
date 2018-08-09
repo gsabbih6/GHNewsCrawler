@@ -7,6 +7,7 @@ package com.sabbih.ghnewscrawler;
 
 import Pipeline.ElasticSearchPipeline;
 import Processor.CitiNewsPageProcessor;
+import Processor.MyJoyOnlinePageProcessor;
 import Utils.Constants;
 import java.util.concurrent.Executors;
 import java.util.concurrent.ScheduledExecutorService;
@@ -27,18 +28,14 @@ public class MainClass {
 //        System.out.println("tikemfsjs");
 
 //Scheduler s=new 
-       Spider s= Spider.create(new CitiNewsPageProcessor())
-                .addUrl(Constants.CITINEWS_URL)
+        Spider s = Spider.create(new MyJoyOnlinePageProcessor())
+                .addUrl(Constants.JOYONLINE_URL)
                 .addPipeline(new ElasticSearchPipeline())
-//                .addPipeline(new ConsolePipeline())
-                .thread(5)
-        .setScheduler(new PriorityScheduler());
-       s.runAsync();
-       
-//       Executors.newSingleThreadScheduledExecutor().schedule(s., 10, TimeUnit.SECONDS);
-      
-       
-               
+                //                .addPipeline(new ConsolePipeline())
+                .thread(5);
+//                .setScheduler(new PriorityScheduler());
+        s.run();
 
+//       Executors.newSingleThreadScheduledExecutor().schedule(s., 10, TimeUnit.SECONDS);
     }
 }

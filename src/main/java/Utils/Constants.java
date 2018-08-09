@@ -12,4 +12,6 @@ package Utils;
 public class Constants {
     public static String CITINEWS_REPO_KEY="CITINEWS_REPO_KEY";
     public static String CITINEWS_URL="https://citinewsroom.com";
+    public static String JOYONLINE_REPO_KEY="JOYONLINE_REPO_KEY";
+    public static String JOYONLINE_URL="https://www.myjoyonline.com";
 }
