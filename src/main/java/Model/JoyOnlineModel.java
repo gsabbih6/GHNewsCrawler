@@ -10,5 +10,14 @@ package Model;
  * @author EGH0158
  */
 public class JoyOnlineModel extends NewBaseModel{
-    
+   String articleVideoSourceUrl;
+
+    public String getArticleVideoSourceUrl() {
+        return articleVideoSourceUrl;
+    }
+
+    public void setArticleVideoSourceUrl(String articleVideoSourceUrl) {
+        this.articleVideoSourceUrl = articleVideoSourceUrl;
+    }
+   
 }
