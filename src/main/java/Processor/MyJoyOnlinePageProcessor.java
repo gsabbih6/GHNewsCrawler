@@ -28,7 +28,7 @@ public class MyJoyOnlinePageProcessor implements PageProcessor {
     @Override
     public void process(Page page) {
         JoyOnlineModel model = new JoyOnlineModel();
-        page.addTargetRequests(page.getHtml().links().all());
+        page.addTargetRequests(page.getHtml().links().regex("(https://myjoyonline\\.com/.+/.+/.+/.+)").all());
 //        doc = Jsoup.parse(page.getHtml().get());
 //        StringBuilder s = new StringBuilder();
 //        Elements allDivs = doc.getElementsByTag("div");

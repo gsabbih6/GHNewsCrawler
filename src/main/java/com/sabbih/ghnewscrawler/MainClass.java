@@ -6,7 +6,9 @@
 package com.sabbih.ghnewscrawler;
 
 import Pipeline.ElasticSearchPipeline;
+import Processor.CitiNewsPageProcessor;
 import Processor.MyJoyOnlinePageProcessor;
+import Utils.AppUtils;
 import Utils.Constants;
 import org.apache.log4j.BasicConfigurator;
 import us.codecraft.webmagic.Spider;
@@ -25,9 +27,9 @@ public class MainClass {
         
 //        while(true){
            
-           Spider s = Spider.create(new MyJoyOnlinePageProcessor())
-                .addUrl(Constants.JOYONLINE_URL)
-                .addPipeline(new ElasticSearchPipeline())
+           Spider s = Spider.create(new CitiNewsPageProcessor())
+                .addUrl(Constants.CITINEWS_URL)
+                .addPipeline(new ElasticSearchPipeline(AppUtils.restHighLevelClient()))
                    
                 //                .addPipeline(new ConsolePipeline())
                 .thread(5);

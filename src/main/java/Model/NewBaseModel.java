@@ -11,7 +11,8 @@ package Model;
  */
 abstract public class NewBaseModel {
 
-    String dateofPublishing, sourceUrl, captionImageUrl, articleContent, articleAuthor,articleheadline, category, description;
+    String dateofPublishing, sourceUrl, captionImageUrl, articleContent, articleAuthor, articleheadline, category, description;
+    int numberOfClicks;
 
     public String getDescription() {
         return description;
@@ -37,7 +38,6 @@ abstract public class NewBaseModel {
         this.dateofPublishing = dateofPublishing;
     }
 
-    
     public String getSourceUrl() {
         return sourceUrl;
     }
